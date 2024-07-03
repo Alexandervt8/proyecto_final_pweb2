@@ -27,15 +27,17 @@ function Upload() {
     };
 
     const parseLine = (line) => {
-        const regex = /^(\d{1,8})(\d{8})([A-Z]+)(.*?)(\d+)(APROBADO|DESAPROBADO)$/;
+        const regex = /^(\d{1,8})(\d{8})([A-Z\/, ]+)(\d)(\d+)(APROBADO|DESAPROBADO)$/;
         const match = line.match(regex);
 
         if (match) {
-            const [_, id, cui, , nombres, nota, estado] = match;
+            const [_, id, cui, nombres, matricula, nota, estado] = match;
+
             return `<linea>
     <id>${parseInt(id)}</id>
     <cui>${cui}</cui>
     <nombres>${nombres.trim()}</nombres>
+    <matricula>${matricula}</matricula>
     <nota>${nota}</nota>
     <estado>${estado}</estado>
 </linea>`;
@@ -54,3 +56,4 @@ function Upload() {
 }
 
 export default Upload;
+
