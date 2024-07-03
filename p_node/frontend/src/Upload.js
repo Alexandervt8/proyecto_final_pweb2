@@ -30,11 +30,13 @@ function Upload() {
         const errorLines = [];
 
         lines.forEach(line => {
-            const result = parseLine(line);
+            // Remover </text> si está al final de la línea
+            const cleanedLine = line.replace(/<\/text>$/, '');
+            const result = parseLine(cleanedLine);
             if (result.success) {
                 taggedLines.push(result.line);
             } else {
-                errorLines.push({ line: line, reason: result.reason });
+                errorLines.push({ line: cleanedLine, reason: result.reason });
             }
         });
 
@@ -45,7 +47,7 @@ function Upload() {
     // Función para analizar y etiquetar cada línea del texto
     const parseLine = (line) => {
         // Expresión regular para desglosar la línea en sus componentes con soporte Unicode
-        const regex = /^(\d{1,8})(\d{8})([\w\/,\sÑñÁÉÍÓÚáéíóú]+)(\d)(\d+)(APROBADO|DESAPROBADO)$/u;
+        const regex = /^(\d{1,8})(\d{8})([\w\/,\sÑñÁÉÍÓÚáéíóú]+)(\d)(\d+)(APROBADO|DESAPROBADO|RETIRADO)$/u;
         const match = line.match(regex);
 
         if (match) {
@@ -95,4 +97,3 @@ function Upload() {
 }
 
 export default Upload;
-
