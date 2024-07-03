@@ -19,7 +19,29 @@ function Upload() {
             },
         });
 
-        setXmlData(response.data);
+        const pdfText = response.data;
+        const lines = pdfText.split('\n');
+        const taggedLines = lines.map(line => parseLine(line)).join('\n');
+
+        setXmlData(taggedLines);
+    };
+
+    const parseLine = (line) => {
+        const regex = /^(\d{1,8})(\d{8})([A-Z]+)(.*?)(\d+)(APROBADO|DESAPROBADO)$/;
+        const match = line.match(regex);
+
+        if (match) {
+            const [_, id, cui, , nombres, nota, estado] = match;
+            return `<linea>
+    <id>${parseInt(id)}</id>
+    <cui>${cui}</cui>
+    <nombres>${nombres.trim()}</nombres>
+    <nota>${nota}</nota>
+    <estado>${estado}</estado>
+</linea>`;
+        } else {
+            return `<linea>${line}</linea>`;
+        }
     };
 
     return (
