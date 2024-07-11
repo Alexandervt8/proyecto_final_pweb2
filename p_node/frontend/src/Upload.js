@@ -57,13 +57,13 @@ function Upload() {
             return {
                 success: true,
                 line: `<linea>
-    <id>${parseInt(id)}</id>
-    <cui>${cui}</cui>
-    <nombres>${nombres.trim()}</nombres>
-    <matricula>${matricula}</matricula>
-    <nota>${nota}</nota>
-    <estado>${estado}</estado>
-</linea>`
+                    <id>${parseInt(id)}</id>
+                    <cui>${cui}</cui>
+                    <nombres>${nombres.trim()}</nombres>
+                    <matricula>${matricula}</matricula>
+                    <nota>${nota}</nota>
+                    <estado>${estado}</estado>
+                </linea>`
             };
         } else {
             // Devuelve el error si la línea no coincide con el formato esperado
