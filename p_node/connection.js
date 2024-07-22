@@ -15,7 +15,7 @@ db.getConnection()
         console.error('Error conectando a la base de datos MySQL:', err);
     });
 
-export class Connection {
+class Connection {
     static async insertPrerequisite({ code, name, approved, semester }) {
         const courseExists = async function (code) {
             try {
@@ -39,26 +39,41 @@ export class Connection {
         }
     }
 
+    static async insertPrerequisiteSpecial({ data }) {
+        let count = Object.keys(data).length;
+
+        for (let i = 1; i <= count; i++) {
+            const { cui, state, code } = data["dt" + i];
+            await db.execute('INSERT INTO prerrequisitos_especiales (cui, estado, codigo_curso) VALUES (?, ?, ?)', [cui, state, code]);
+        }
+    }
+
     static async determineVacancies() {
-        const [rows] = await db.execute('SELECT codigo_curso, vacantes, prerrequisitos FROM vacantes')
+        const [rows] = await db.execute('SELECT codigo_curso, vacantes, prerrequisitos FROM vacantes');
 
         for (let row of rows) {
-            const { code, vacancies, prerequisites } = row;
+            const { codigo_curso: code, vacantes: vacancies, prerrequisitos: prerequisites } = row;
 
-            if (vacancies === NULL) {
-                let jsonString = prerequisites.jsonString;
-                let jsonArray = JSON.parse(jsonString);
+            if (vacancies === null) {
+                let jsonArray = JSON.parse(prerequisites);
 
-                if (jsonArray.length == 2) { // Podemos mejorarlo si asi lo desean pero faltara tiempo
-                    const rws1 = await db.execute('SELECT aprobados_curso FROM prerrequisitos WHERE codigo_curso = ?', [jsonArray[0]]);
-                    const rws2 = await db.execute('SELECT aprobados_curso FROM prerrequisitos WHERE codigo_curso = ?', [jsonArray[1]]);
+                if (jsonArray.length === 2) {
+                    let count = 0;
 
-                    let vacanciesFinal = Math.min(rws1[0], rws2[0])
-                    await db.execute('UPDATE vacantes SET vacantes = ? WHERE codigo_curso = ?', [vacanciesFinal, code])
-                } 
-                else { // Aqui no hay problem
-                    const rws = await db.execute('SELECT aprobados_curso FROM prerrequisitos WHERE codigo_curso = ?', [jsonArray[0]]);
-                    await db.execute('UPDATE vacantes SET vacantes = ? WHERE codigo_curso = ?', [rws[0], code])
+                    const [rowsFirst] = await db.execute('SELECT cui FROM prerrequisitos_especiales WHERE codigo_curso = ?', [jsonArray[0]]);
+
+                    for (let myRow of rowsFirst) {
+                        const { cui: myCUI } = myRow;
+                        const [rowsSecond] = await db.execute('SELECT * FROM prerrequisitos_especiales WHERE cui = ? AND codigo_curso = ?', [myCUI, jsonArray[1]]);
+
+                        if (rowsSecond.length > 0) {
+                            count++;
+                        }
+                    }
+                    await db.execute('UPDATE vacantes SET vacantes = ? WHERE codigo_curso = ?', [count, code]);
+                } else { // Aqui no hay problema
+                    const [rows] = await db.execute('SELECT aprobados_curso FROM prerrequisitos WHERE codigo_curso = ?', [jsonArray[0]]);
+                    await db.execute('UPDATE vacantes SET vacantes = ? WHERE codigo_curso = ?', [rows[0].aprobados_curso, code]);
                 }
             }
         }
@@ -68,7 +83,8 @@ export class Connection {
         try {
             const [rows] = await db.execute('SELECT nombre_curso, vacantes FROM vacantes');
             return rows;
-        } catch {
+        } catch (error) {
+            console.error('Error al obtener las vacantes:', error);
             return [];
         }
     }

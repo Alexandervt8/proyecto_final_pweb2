@@ -5,8 +5,9 @@ const fileUpload = require('express-fileupload')
 const pdf = require('pdf-parse')
 const { create } = require('xmlbuilder2')
 const cors = require('cors') // Importa el módulo cors
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser')
 const { Connection } = require('./connection')
+const xml2js = require('xml2js');
 
 const app = express();
 const port = 3001;
@@ -51,28 +52,47 @@ app.use(bodyParser.text({ type: 'application/xml' }));
 
 app.post('/receive-xml', async (req, res) => {
     const xml = req.body;
-    let parser = new DOMParser();
-    let xmlDoc = parser.parseFromString(xml, "application/xml");
+    let parser = new xml2js.Parser();
 
-    let root = xmlDoc.documentElement;
+    try {
+        const result = await parser.parseStringPromise(xml);
+        let root = result.root;
 
-    let code = root.children[0].textContent; // <?>1234567</?>
-    let name = root.children[1].textContent; // <?>FUNDAMENTOS DE PROGRAMACION 2</?>
-    let semester = root.children[2].textContent; // <?>2024A</?> or <?>2024-A</?>
+        let code = root.children[0]._;
+        let name = root.children[1]._;
+        let semester = root.children[2]._;
 
-    let approved = 0;
-    for (let i = 3; i < root.children.length; i++) {
-        let linea = root.children[i]; // Acceder al elemento <linea>
-        let status = linea.getElementsByTagName('estado')[0].textContent; // Acceder al elemento <estado> dentro de <linea>
-        
-        if (status === "APROBADO") {
-            approved++;
+
+        if (code === "1702118" || code === "1702122" || code === "1703135" || code === "1703136") {
+            let data = {};
+            for (let i = 3; i < root.children.length; i++) {
+                let linea = root.children[i];
+                let cui = linea.cui[0];
+                let state = linea.estado[0];
+
+                data["dt" + (i - 2)] = { cui, state, code };
+            }
+
+            await Connection.insertPrerequisiteSpecial({ data });
+        } else {
+            let approved = 0;
+            for (let i = 3; i < root.children.length; i++) {
+                let linea = root.children[i];
+                let status = linea.estado[0];
+
+                if (status === "APROBADO") {
+                    approved++;
+                }
+            }
+
+            await Connection.insertPrerequisite({ code, name, approved, semester });
         }
+
+        res.status(200).send('Data received and processed');
+    } catch (error) {
+        console.error('Error processing XML:', error);
+        res.status(500).send('Internal Server Error');
     }
-
-    await Connection.insertPrerrequisite({ code, name, approved, semester });
-
-    res.status(200).send('Data received and processed');
 });
 
 app.listen(port, () => {
