@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 11-07-2024 a las 16:35:33
+-- Tiempo de generación: 22-07-2024 a las 04:05:30
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -32,6 +32,18 @@ CREATE TABLE `prerrequisitos` (
   `nombre_curso` varchar(100) NOT NULL,
   `aprobados_curso` smallint(4) NOT NULL,
   `semestre_curso` varchar(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prerrequisitos_especiales`
+--
+
+CREATE TABLE `prerrequisitos_especiales` (
+  `cui` varchar(8) NOT NULL,
+  `estado` varchar(11) NOT NULL,
+  `codigo_curso` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -81,6 +93,12 @@ INSERT INTO `vacantes` (`codigo_curso`, `nombre_curso`, `vacantes`, `prerrequisi
 --
 ALTER TABLE `prerrequisitos`
   ADD PRIMARY KEY (`codigo_curso`);
+
+--
+-- Indices de la tabla `prerrequisitos_especiales`
+--
+ALTER TABLE `prerrequisitos_especiales`
+  ADD PRIMARY KEY (`cui`);
 
 --
 -- Indices de la tabla `vacantes`
