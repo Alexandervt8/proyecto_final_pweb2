@@ -15,7 +15,7 @@ db.getConnection()
         console.error('Error conectando a la base de datos MySQL:', err);
     });
 
-class Connection {
+export class Connection {
     static async insertPrerequisite({ code, name, approved, semester }) {
         const courseExists = async function (code) {
             try {
