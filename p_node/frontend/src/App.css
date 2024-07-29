@@ -1,4 +1,7 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Asegura que la aplicación ocupe toda la altura de la ventana */
   text-align: center;
   font-family: Arial, sans-serif;
 }
@@ -26,7 +29,39 @@
   padding: 20px; /* Añade relleno para espaciar el contenido */
 }
 
+.App-container {
+  display: flex;
+  flex: 1;
+}
+
+.App-sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Agrega una sombra para el menú */
+}
+
+.App-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.App-sidebar li {
+  margin: 10px 0;
+}
+
+.App-sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.App-sidebar a:hover {
+  color: #61dafb; /* Color de texto en hover */
+}
+
 .App-main {
+  flex: 1;
   padding: 20px;
 }
 
@@ -97,3 +132,43 @@ pre {
   }
 }
 
+.upload-container {
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.file-input {
+  margin-bottom: 20px;
+}
+
+.file-input label {
+  display: inline-block;
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.file-input label:hover {
+  background-color: #21a1f1;
+}
+
+.options {
+  margin-bottom: 20px;
+}
+
+.options label {
+  margin-right: 20px;
+  font-size: 16px;
+}

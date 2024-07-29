@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<linea>
+                    <id>1</id>
+                    <cui>20233489</cui>
+                    <nombres>ARIAS/QUISPE, JHONATAN DAVID1</nombres>
+                    <matricula>1</matricula>
+                    <nota>6</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>2</id>
+                    <cui>20230480</cui>
+                    <nombres>BARRIOS/MEDINA, MATHIAS ALONSO1</nombres>
+                    <matricula>1</matricula>
+                    <nota>6</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>3</id>
+                    <cui>20232187</cui>
+                    <nombres>BOZA/PORTILLA, YORDANO HERNAN1</nombres>
+                    <matricula>1</matricula>
+                    <nota>4</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>4</id>
+                    <cui>20231498</cui>
+                    <nombres>CACERES/RUIZ, JOHANN ANDRE1</nombres>
+                    <matricula>1</matricula>
+                    <nota>6</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>5</id>
+                    <cui>20230483</cui>
+                    <nombres>CARI/LIPE, PAUL ANDREE1</nombres>
+                    <matricula>1</matricula>
+                    <nota>5</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>6</id>
+                    <cui>20233476</cui>
+                    <nombres>CARLOS/CCAMAQQUE, WILSON FREDDY1</nombres>
+                    <matricula>1</matricula>
+                    <nota>5</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>7</id>
+                    <cui>20210184</cui>
+                    <nombres>CHOQUEHUANCA/BEDOYA, BRAYAN DENILSON1</nombres>
+                    <matricula>1</matricula>
+                    <nota>0</nota>
+                    <estado>DESAPROBADO</estado>
+</linea>
+<linea>
+                    <id>8</id>
+                    <cui>20232191</cui>
+                    <nombres>CHOQUEHUANCA/ZAPANA, HERNAN ANDY1</nombres>
+                    <matricula>1</matricula>
+                    <nota>9</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>9</id>
+                    <cui>20230472</cui>
+                    <nombres>CHURA/ACABANA, JULIO RUBEN1</nombres>
+                    <matricula>1</matricula>
+                    <nota>7</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>10</id>
+                    <cui>20232199</cui>
+                    <nombres>HANCCO/MULLISACA, SERGIO DANILO1</nombres>
+                    <matricula>1</matricula>
+                    <nota>6</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>11</id>
+                    <cui>20232195</cui>
+                    <nombres>LLACHO/DELGADO, SAMIR JAREN</nombres>
+                    <matricula>1</matricula>
+                    <nota>8</nota>
+                    <estado>DESAPROBADO</estado>
+</linea>
+<linea>
+                    <id>12</id>
+                    <cui>20230489</cui>
+                    <nombres>MAMANI/ANAHUA, VICTOR NARCISO1</nombres>
+                    <matricula>1</matricula>
+                    <nota>7</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>13</id>
+                    <cui>20232188</cui>
+                    <nombres>MAMANI/CESPEDES, JHONATAN BENJAMIN</nombres>
+                    <matricula>1</matricula>
+                    <nota>9</nota>
+                    <estado>DESAPROBADO</estado>
+</linea>
+<linea>
+                    <id>14</id>
+                    <cui>20230488</cui>
+                    <nombres>MAMANI/HUARSAYA, JORGE LUIS1</nombres>
+                    <matricula>1</matricula>
+                    <nota>5</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>15</id>
+                    <cui>20232186</cui>
+                    <nombres>MAMANI/QUISPE, ADRIAN ISSAC1</nombres>
+                    <matricula>1</matricula>
+                    <nota>4</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>16</id>
+                    <cui>20230478</cui>
+                    <nombres>MARRON/ZEBALLOS, CARLOS DANIEL LUDWIG1</nombres>
+                    <matricula>1</matricula>
+                    <nota>5</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>17</id>
+                    <cui>20192193</cui>
+                    <nombres>MENDOZA/CONTRERAS, GIOVANI ANGEL1</nombres>
+                    <matricula>1</matricula>
+                    <nota>2</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>18</id>
+                    <cui>20230474</cui>
+                    <nombres>MOLLO/CHUQUICAÑA, DOLLY YADHIRA1</nombres>
+                    <matricula>1</matricula>
+                    <nota>7</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>19</id>
+                    <cui>20230475</cui>
+                    <nombres>NINA/CALIZAYA, RAFAEL DIEGO1</nombres>
+                    <matricula>1</matricula>
+                    <nota>6</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>20</id>
+                    <cui>20233480</cui>
+                    <nombres>PAMO/CONDORI, BENJAMIN ANDRE</nombres>
+                    <matricula>1</matricula>
+                    <nota>1</nota>
+                    <estado>DESAPROBADO</estado>
+</linea>
+<linea>
+                    <id>21</id>
+                    <cui>20232204</cui>
+                    <nombres>PORTUGAL/PORTUGAL, EDUARDO SEBASTIAN STEPHAN1</nombres>
+                    <matricula>1</matricula>
+                    <nota>9</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>22</id>
+                    <cui>20222082</cui>
+                    <nombres>QUENTA/AHUMADA, CARLOS ALBERTO</nombres>
+                    <matricula>2</matricula>
+                    <nota>2</nota>
+                    <estado>DESAPROBADO</estado>
+</linea>
+<linea>
+                    <id>23</id>
+                    <cui>20213040</cui>
+                    <nombres>QUINTEROS/OBLITAS, BRANDON ARTURO</nombres>
+                    <matricula>2</matricula>
+                    <nota>1</nota>
+                    <estado>DESAPROBADO</estado>
+</linea>
+<linea>
+                    <id>24</id>
+                    <cui>20230467</cui>
+                    <nombres>QUISPE/CONDORI, ALVARO RAUL1</nombres>
+                    <matricula>1</matricula>
+                    <nota>6</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>25</id>
+                    <cui>20190530</cui>
+                    <nombres>QUISPE/FLORES, MARCO RAMIRO1</nombres>
+                    <matricula>1</matricula>
+                    <nota>6</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>26</id>
+                    <cui>20233483</cui>
+                    <nombres>QUISPE/MARCA, EDYSSON DARWIN1</nombres>
+                    <matricula>1</matricula>
+                    <nota>6</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>27</id>
+                    <cui>20232189</cui>
+                    <nombres>QUISPE/PAUCCAR, JOSUE CLAUDIO1</nombres>
+                    <matricula>1</matricula>
+                    <nota>5</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>28</id>
+                    <cui>20230470</cui>
+                    <nombres>SARAYASI/HUANACO, JEFERSON JESUS</nombres>
+                    <matricula>1</matricula>
+                    <nota>9</nota>
+                    <estado>DESAPROBADO</estado>
+</linea>
+<linea>
+                    <id>29</id>
+                    <cui>20214263</cui>
+                    <nombres>SONCCO/HANCCO, PEDRO MIGUEL2</nombres>
+                    <matricula>1</matricula>
+                    <nota>3</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>30</id>
+                    <cui>20214262</cui>
+                    <nombres>SUAREZ/HUAMANI, MARCO ANTONIO2</nombres>
+                    <matricula>1</matricula>
+                    <nota>0</nota>
+                    <estado>DESAPROBADO</estado>
+</linea>
+<linea>
+                    <id>31</id>
+                    <cui>20233482</cui>
+                    <nombres>TICONA/SAURE, JOSE MARIA1</nombres>
+                    <matricula>1</matricula>
+                    <nota>4</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>32</id>
+                    <cui>20232193</cui>
+                    <nombres>VALDIVIA/SEGOVIA, RYAN FABIAN1</nombres>
+                    <matricula>1</matricula>
+                    <nota>7</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>33</id>
+                    <cui>20232197</cui>
+                    <nombres>VELARDE/SALDAÑA, JHOSSEP FABRITZIO1</nombres>
+                    <matricula>1</matricula>
+                    <nota>4</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>34</id>
+                    <cui>20210555</cui>
+                    <nombres>VILCA/FLORES, JOHAN HUGO2</nombres>
+                    <matricula>1</matricula>
+                    <nota>1</nota>
+                    <estado>APROBADO</estado>
+</linea>
+<linea>
+                    <id>35</id>
+                    <cui>20233472</cui>
+                    <nombres>ZUÑIGA/HUARCA, DYLAN ANTONIO1</nombres>
+                    <matricula>1</matricula>
+                    <nota>2</nota>
+                    <estado>APROBADO</estado>
+</linea>
+</root>

@@ -1,27 +1,35 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "p_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "node server.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "1.7.2",
+    "body-parser": "^1.20.2",
+    "cors": "2.8.5",
+    "express": "^4.19.2",
+    "express-fileupload": "1.5.0",
+    "mysql2": "^3.10.2",
+    "pdf-parse": "1.1.1",
+    "react-router-dom": "^6.25.1",
+    "url": "^0.11.3",
+    "web-vitals": "^4.2.2",
+    "xml2js": "^0.6.2",
+    "xmlbuilder": "15.1.1",
+    "xmlbuilder2": "3.1.1"
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
   },
   "browserslist": {
     "production": [
@@ -34,5 +42,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
+
