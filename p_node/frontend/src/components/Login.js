@@ -6,26 +6,27 @@ import ytIcon from '../assets/Img/yt.png';
 
 const Login = () => {
     const handleLogin = () => {
+        // Aquí va la lógica de inicio de sesión
         alert('Login button clicked');
     };
 
     return (
         <div className="container">
             <div className="form-box">
-                <div className="title">Acceso</div>
+                <div className="title-login">Iniciar Sesión</div>
                 <div className="social-icons">
                     <img src={fbIcon} alt="Facebook" />
                     <img src={gpIcon} alt="Google Plus" />
                     <img src={ytIcon} alt="YouTube" />
                 </div>
-                <form id="login" className="input-group" action="#" method="post" name="registro">
-                    <input type="text" className="input-field param" placeholder="Usuario" name="usuario" autoComplete="off" required />
-                    <input type="password" className="input-field param" placeholder="Clave" name="clave" autoComplete="off" required />
+                <form id="login" className="input-group">
+                    <input type="text" className="input-field" name="usuario" autoComplete="off" placeholder="Ingresar Usuario" />
+                    <input type="password" className="input-field" name="clave" autoComplete="off" placeholder="Ingresar clave" />
                     <div className="remember">
                         <input type="checkbox" className="check-box" />
                         <span>Recordar contraseña</span>
                     </div>
-                    <button type="button" onClick={handleLogin} className="submit-btn">Entrar</button>
+                    <button type="button" className="submit-btn" onClick={handleLogin}>Iniciar Sesión</button>
                 </form>
             </div>
         </div>

@@ -17,9 +17,10 @@ function Upload() {
         setSelectedOption(e.target.value);
     };
 
+    
     // Función para analizar y etiquetar cada línea del texto (notas)
     const parseLineNotas = (line) => {
-        const regex = /^(\d{1,8})(\d{8})([\w\/,\sÑñÁÉÍÓÚáéíóú]+)(\d)(\d+)(APROBADO|DESAPROBADO|RETIRADO)$/u;
+        const regex = /^(\d{1,8})(\d{8})([a-zA-Z\/,\sÑñÁÉÍÓÚáéíóú]+)(\d)(\d+)(APROBADO|DESAPROBADO|RETIRADO)$/u;
         const match = line.match(regex);
 
         if (match) {
@@ -36,17 +37,33 @@ function Upload() {
 </linea>`
             };
         } else {
-            return {
-                success: false,
-                reason: 'Formato incorrecto o caracteres no soportados'
-            };
+            const regex2 = /^([a-zA-Z\/,\sÑñÁÉÍÓÚáéíóú0-9]+)\((\d{7})\).*$/u;
+            const match2 = line.match(regex2);
+
+            if (match2) {
+                const [_, nombre_curso, codigo_curso] = match2;
+
+                return {
+                    success: true,
+                    line: `<nombre_curso>${nombre_curso}</nombre_curso>
+<codigo_curso>${codigo_curso.trim()}</codigo_curso>
+                        `
+                };
+            } else {
+
+                return {
+                    success: false,
+                    reason: 'Formato incorrecto o caracteres no soportados'
+                };
+            }
         }
     };
 
     // Función para analizar y etiquetar cada línea del texto (plan)
     const parseLinePlan = (line) => {
-        const regex = /^([A-Z])(\d{7})([A-Z\s]+)(\d)(\d{7})(\d)(0|[1-9]\d{6})?/u;
+        const regex = /^([A-Z])(\d{7})(.*?)(?:MS|SI|ED|EDFL|LL|HG|HGSO|HGSOPR|PS|FL)[^\d]*(\d)(0|[1-9]\d{6})(0|[1-9]\d{6})?/u;
         const match = line.match(regex);
+
 
         if (match) {
             const [_, componente, codigo, curso, creditaje, prerequisito1, prerequisito2] = match;
@@ -62,7 +79,34 @@ function Upload() {
                     <creditaje>${creditaje}</creditaje>
                     <prerequisito1>${isPrerequisitoEmpty ? '' : prerequisito1}</prerequisito1>
                     <prerequisito2>${isPrerequisitoEmpty ? '' : (prerequisito2 === '0' ? '' : prerequisito2)}</prerequisito2>
-    </plan>`
+</plan>`
+            };
+        } else {
+            return {
+                success: false,
+                reason: 'Formato incorrecto o caracteres no soportados'
+            };
+        }
+        
+    };
+
+    const parseLinePlaneva = (line) => {
+        const regex2 = /^([A-Z])(\d{7})(.*)$/u;
+        const match2 = line.match(regex2);
+    
+        // Verifica si hay una coincidencia
+        if (match2) {
+            const [_, componente, codigo, curso] = match2;
+            return {
+                success: true,
+                line: `<plan>
+                    <componente>${componente}</componente>
+                    <codigo>${codigo}</codigo>
+                    <curso>${curso.trim()}</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>`
             };
         } else {
             return {
@@ -71,8 +115,6 @@ function Upload() {
             };
         }
     };
-
-
 
     // Maneja la subida del archivo al servidor y el procesamiento de los datos
     const handleUpload = async () => {
@@ -99,16 +141,23 @@ function Upload() {
             lines.forEach(line => {
                 const cleanedLine = line.replace(/<\/text>$/, '').trim();
                 let result;
+                let result2;
+                
                 if (selectedOption === 'notas') {
                     result = parseLineNotas(cleanedLine);
                 } else if (selectedOption === 'plan') {
                     result = parseLinePlan(cleanedLine);
+                    result2 = parseLinePlaneva(cleanedLine);
                 }
 
                 if (result && result.success) {
                     taggedLines.push(result.line);
                 } else {
-                    errorLines.push({ line: cleanedLine, reason: result.reason });
+                    if (result2 && result2.success) {
+                        taggedLines.push(result2.line);
+                    } else {
+                        errorLines.push({ line: cleanedLine, reason: result.reason });
+                    }
                 }
             });
 
@@ -162,7 +211,11 @@ function Upload() {
         }
 
         try {
-            await axios.post('http://localhost:3001/upload-xml-to-db', xmlData, {
+            const url = selectedOption === 'plan'
+                ? 'http://localhost:3001/upload-xml-to-db-plan'
+                : 'http://localhost:3001/upload-xml-to-db';
+
+            await axios.post(url, xmlData, {
                 headers: {
                     'Content-Type': 'application/xml',
                 },

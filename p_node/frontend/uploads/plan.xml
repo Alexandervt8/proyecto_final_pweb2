@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<plan>
+                    <componente>D</componente>
+                    <codigo>1701102</codigo>
+                    <curso>RAZONAMIENTO LOGICO MATEMATICO</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>D</componente>
+                    <codigo>1701103</codigo>
+                    <curso>MATEMATICA BA</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1701104</codigo>
+                    <curso>ESTRUCTURAS DISCRETAS 1</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1701105</codigo>
+                    <curso>INTRODUCCION A LA COMPUTACION</curso>
+                    <creditaje>2</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1701106</codigo>
+                    <curso>FUNDAMENTOS DE LA PROGRAMACION 1</curso>
+                    <creditaje>5</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>D</componente>
+                    <codigo>1701114</codigo>
+                    <curso>METODOLOGIA DEL TRABAJO INTELECTUAL</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>E</componente>
+                    <codigo>1701145</codigo>
+                    <curso>RELACIONES HUMANAS EN EMPRESAS DE DESARROLLO</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>D</componente>
+                    <codigo>1701210</codigo>
+                    <curso>CALCULO EN UNA VARIABLE</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1701103</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1701211</codigo>
+                    <curso>ESTRUCTURAS DISCRETAS 2</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1701104</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1701212</codigo>
+                    <curso>PROGRAMACION WEB 1</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1701106</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1701213</codigo>
+                    <curso>FUNDAMENTOS DE PROGRAMACION 2</curso>
+                    <creditaje>5</creditaje>
+                    <prerequisito1>1701106</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>D</componente>
+                    <codigo>1701216</codigo>
+                    <curso>COMUNICACION INTEGRA</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>E</componente>
+                    <codigo>1701217</codigo>
+                    <curso>REALIDAD NACIONAL</curso>
+                    <creditaje>2</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>E</componente>
+                    <codigo>1702118</codigo>
+                    <curso>TA</curso>
+                    <creditaje>2</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>D</componente>
+                    <codigo>1702119</codigo>
+                    <curso>CALCULO EN VARIAS VARIABLES</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1701210</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>E</componente>
+                    <codigo>1702120</codigo>
+                    <curso>TA</curso>
+                    <creditaje>2</creditaje>
+                    <prerequisito1>1701145</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>E</componente>
+                    <codigo>1702121</codigo>
+                    <curso>INNOVACION Y CREATIVIDAD</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1702122</codigo>
+                    <curso>PROGRAMACION WEB 2</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1701212</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1702123</codigo>
+                    <curso>REDACCION DE ARTICULOS E INFORMES DE</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1702124</codigo>
+                    <curso>ESTRUCTURA DE DATOS Y ALGORITMOS</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1701211</prerequisito1>
+                    <prerequisito2>1701213</prerequisito2>
+</plan>
+<plan>
+                    <componente>E</componente>
+                    <codigo>1702125</codigo>
+                    <curso>CIUDADANIA E INTERCULTURALIDAD</curso>
+                    <creditaje>2</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>D</componente>
+                    <codigo>1702226</codigo>
+                    <curso>ESTADISTICA MATEMATICA, PROBABILIDADES Y</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1702227</codigo>
+                    <curso>ARQUITECTURA DE COMPUTADORAS</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1702124</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1702228</codigo>
+                    <curso>METODOS DE INVESTIGACION Y R</curso>
+                    <creditaje>2</creditaje>
+                    <prerequisito1>1702123</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1702229</codigo>
+                    <curso>INTERACCION HUMANO COMPUTADOR</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1702118</prerequisito1>
+                    <prerequisito2>1702122</prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1702230</codigo>
+                    <curso>ENFOQUE EMPRESARIAL</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1702120</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1702231</codigo>
+                    <curso>ANALI</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1702124</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>E</componente>
+                    <codigo>1702278</codigo>
+                    <curso>ECOLOGIA Y CONSERVACION AMBIENTALBI201.00.00.02.00.0</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703133</codigo>
+                    <curso>BASE DE DATOS</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1702230</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703134</codigo>
+                    <curso>PROGRAMACION DE</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1702227</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703135</codigo>
+                    <curso>INGENIERIA Y PROCESOS DE SOFTWARE</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1702229</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703136</codigo>
+                    <curso>TEORIA DE LA COMPUTACION</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1702231</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703137</codigo>
+                    <curso>ORGANIZACION Y METODOS</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1702230</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703138</codigo>
+                    <curso>INVESTIGACION DE OPERACIONES</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1702119</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703239</codigo>
+                    <curso>R</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1702227</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703240</codigo>
+                    <curso>TECNOLOGIA DE OBJETOS</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1703135</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703241</codigo>
+                    <curso></curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1703134</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703242</codigo>
+                    <curso>FUNDAMENTOS DE</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1703133</prerequisito1>
+                    <prerequisito2>1703137</prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703243</codigo>
+                    <curso>CONSTRUCCION DE SOFTWARE</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1703135</prerequisito1>
+                    <prerequisito2>1703136</prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1703244</codigo>
+                    <curso>METODOS NUMERICOS</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1703138</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>D</componente>
+                    <codigo>1704146</codigo>
+                    <curso>FI</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1703244</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1704147</codigo>
+                    <curso>TECNOLOGIAS DE INFORMACION</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1703242</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1704148</codigo>
+                    <curso>INTELIGENCIA ARTIFICIAL</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1702226</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1704149</codigo>
+                    <curso>INGENIERIA DE REQUERIMIENTOS</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1703240</prerequisito1>
+                    <prerequisito2>1703243</prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1704150</codigo>
+                    <curso></curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1703239</prerequisito1>
+                    <prerequisito2>1703241</prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1704151</codigo>
+                    <curso>PRUEBAS DE SOFTWARE</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1703243</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>D</componente>
+                    <codigo>1704153</codigo>
+                    <curso>INGLES</curso>
+                    <creditaje>2</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1704252</codigo>
+                    <curso>GESTION DE PROYECTOS DE SOFTWARE</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1704149</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1704254</codigo>
+                    <curso>CALIDAD DE SOFTWARE</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1704151</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1704255</codigo>
+                    <curso>AUDITORIA DE</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1703242</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1704256</codigo>
+                    <curso>DISENO Y ARQUITECTURA DE SOFTWARE</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1704149</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1704257</codigo>
+                    <curso>NEGOCIOS ELECTRONICOS (E)</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1704147</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1704258</codigo>
+                    <curso>INTRODUCCION AL DESARROLLO DE SOFTWARE DE</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1704259</codigo>
+                    <curso>INTRODUCCION AL DESARROLLO DE NUEVAS</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1704260</codigo>
+                    <curso>ASPECTOS FORMALES DE ESPECIFICACION Y</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705161</codigo>
+                    <curso>PROYECTO DE INGENIERIA DE SOFTWARE 1</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1704256</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1705162</codigo>
+                    <curso>SEMINARIO DE TESIS 1</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1702228</prerequisito1>
+                    <prerequisito2>1704252</prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705163</codigo>
+                    <curso>GESTION DE EMPRENDIMIENTO DE SOFTWARE</curso>
+                    <creditaje>2</creditaje>
+                    <prerequisito1>1704252</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705164</codigo>
+                    <curso>SEGURIDAD INFORMATICA</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1703239</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705165</codigo>
+                    <curso>MANTENIMIENTO, CONFIGURACION Y EVOLUCION DE</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>E</componente>
+                    <codigo>1705166</codigo>
+                    <curso>ETICA GENERAL Y PROFE</curso>
+                    <creditaje>2</creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705167</codigo>
+                    <curso>TOPICOS AVANZADOS EN BASES DE DATOS (E)</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1704257</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705168</codigo>
+                    <curso>COMPUTACION GRAFICA, VISION COMPUTACIONAL Y</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705169</codigo>
+                    <curso>DESARRO</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1704259</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705270</codigo>
+                    <curso>TOPICOS AVANZADOS EN INGENIERIA DE SOFTWARE</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1705165</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705271</codigo>
+                    <curso>PRACTICAS PRE PROFE</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1705161</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>F</componente>
+                    <codigo>1705272</codigo>
+                    <curso>SEMINARIO DE TESIS 2</curso>
+                    <creditaje>4</creditaje>
+                    <prerequisito1>1705162</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705273</codigo>
+                    <curso>PROYECTO DE INGENIERIA DE SOFTWARE 2</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1705161</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705274</codigo>
+                    <curso>GESTION DE SISTEMAS Y TECNOLOGIAS DE</curso>
+                    <creditaje></creditaje>
+                    <prerequisito1></prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705275</codigo>
+                    <curso>DESARRO</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1705168</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+<plan>
+                    <componente>G</componente>
+                    <codigo>1705276</codigo>
+                    <curso>PLATAFORMAS EMERGENTES (E)</curso>
+                    <creditaje>3</creditaje>
+                    <prerequisito1>1705169</prerequisito1>
+                    <prerequisito2></prerequisito2>
+</plan>
+</root>
