@@ -10,50 +10,94 @@ const db = mysql.createPool({
 db.getConnection()
     .then(() => {
         console.log('Conectado a la base de datos MySQL');
-        ensureTableExists(); // Llamada para asegurarse de que la tabla exista
+        ensureTablesExist(); // Llamada para asegurarse de que las tablas existen
     })
     .catch((err) => {
         console.error('Error conectando a la base de datos MySQL:', err);
     });
 
-// Función para asegurarse de que la tabla existe
-async function ensureTableExists() {
-    const createTableQuery = `
-        CREATE TABLE IF NOT EXISTS prerrequisitos (
+// Función para asegurarse de que las tablas existen
+async function ensureTablesExist() {
+    const createCursosTableQuery = `
+        CREATE TABLE IF NOT EXISTS cursos (
+            id INT AUTO_INCREMENT PRIMARY KEY,
             codigo_curso VARCHAR(50) NOT NULL,
             nombre_curso VARCHAR(255) NOT NULL,
-            aprobados_curso INT NOT NULL,
-            semestre_curso VARCHAR(50) NOT NULL,
-            PRIMARY KEY (codigo_curso)
+            nombre VARCHAR(255) NOT NULL,
+            nota_curso INT NOT NULL,
+            matricula_curso VARCHAR(50) NOT NULL
         )
     `;
-    await db.query(createTableQuery);
+    const createUsersTableQuery = `
+        CREATE TABLE IF NOT EXISTS usuarios (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            email VARCHAR(255) NOT NULL,
+            nombre VARCHAR(255) NOT NULL,
+            metodo VARCHAR(50) NOT NULL
+        )
+    `;
+
+    const createPlansTableQuery = `
+    CREATE TABLE IF NOT EXISTS planes (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        componente VARCHAR(1) NOT NULL,
+        codigo VARCHAR(10) NOT NULL,
+        curso VARCHAR(255) NOT NULL,
+        creditaje VARCHAR(2) NOT NULL,
+        prerequisito1 VARCHAR(10),
+        prerequisito2 VARCHAR(10)
+    )
+`;
+
+    await db.query(createCursosTableQuery);
+    await db.query(createUsersTableQuery);
+    await db.query(createPlansTableQuery);
 }
 
 class Connection {
-    static async insertPrerequisite({ code, name, approved, semester }) {
-        const courseExists = async function (code) {
-            try {
-                const [rows] = await db.execute('SELECT * FROM prerrequisitos WHERE codigo_curso = ?', [code]);
-                return rows.length > 0;
-            } catch (error) {
-                console.error('Error al comprobar el curso:', error);
-                return false;
-            }
-        };
+    
+    static async getGradeCount(code) {
+        const query = `
+            SELECT * 
+            FROM cursos 
+            WHERE codigo_curso = ? AND nota_curso >= 11
+        `;
+        return await db.execute(query, [code]);
+    }
 
-        if (await courseExists(code)) {
-            const [rows] = await db.execute('SELECT aprobados_curso FROM prerrequisitos WHERE codigo_curso = ?', [code]);
-            const currentApproved = rows[0].aprobados_curso;
+    static async insertCurso({ code,name_curso,name, nota, matricula }) {
+        try {
+            
+            // Insertar el nuevo curso
+            const insertCursoQuery = `
+                INSERT INTO cursos (codigo_curso, nombre_curso, nombre, nota_curso, matricula_curso)
+                VALUES (?, ?, ?, ?, ?)
+            `;
 
-            approved += currentApproved;
-
-            await db.execute('UPDATE prerrequisitos SET aprobados_curso = ? WHERE codigo_curso = ?', [approved, code]);
-        } else {
-            await db.execute('INSERT INTO prerrequisitos (codigo_curso, nombre_curso, aprobados_curso, semestre_curso) VALUES (?, ?, ?, ?)', [code, name, approved, semester]);
+            const [result] = await db.execute(insertCursoQuery, [code,name_curso,name, nota, matricula]);
+            return result;
+        } catch (error) {
+            console.error('Error al insertar el curso:', error);
+            throw error;
         }
     }
 
+    static async insertPlan({ component, code, course, credits, prerequisite1, prerequisite2 }) {
+        // Verifica si credits es null, undefined o vacío, y proporciona un valor predeterminado
+        const creditValue = credits && credits.trim() !== '' ? credits : '0';
+
+        try {
+            const query = `
+                INSERT INTO planes (componente, codigo, curso, creditaje, prerequisito1, prerequisito2)
+                VALUES (?, ?, ?, ?, ?, ?);
+            `;
+            await db.execute(query, [component, code, course, creditValue, prerequisite1, prerequisite2]);
+        } catch (error) {
+            console.error('Error al insertar el plan:', error);
+            throw error;
+        }
+    }
+    
     static async insertPrerequisiteSpecial({ data }) {
         let count = Object.keys(data).length;
 
@@ -94,6 +138,26 @@ class Connection {
         }
     }
 
+    static async getCursos() {
+        try {
+            const [rows] = await db.execute('SELECT * FROM cursos');
+            return rows;
+        } catch (error) {
+            console.error('Error al obtener los cursos:', error);
+            throw error;
+        }
+    }
+
+    static async getPlanes() {
+        try {
+            const [rows] = await db.execute('SELECT * FROM planes');
+            return rows;
+        } catch (error) {
+            console.error('Error al obtener los planes:', error);
+            throw error;
+        }
+    }
+
     static async getVacancies() {
         try {
             const [rows] = await db.execute('SELECT nombre_curso, vacantes FROM vacantes');
@@ -114,6 +178,38 @@ class Connection {
         }
     }
 
+    static async saveUser(email, name, method) {
+        try {
+            await db.execute(
+                'INSERT INTO usuarios (email, nombre, metodo) VALUES (?, ?, ?)',
+                [email, name, method]
+            );
+            console.log('Usuario guardado correctamente');
+        } catch (error) {
+            console.error('Error al guardar el usuario:', error);
+        }
+    }
+
+    static async getTables() {
+        try {
+            const [rows] = await db.query("SHOW TABLES");
+            return rows.map(row => Object.values(row)[0]);
+        } catch (error) {
+            console.error('Error al obtener las tablas:', error);
+            throw error;
+        }
+    }
+
+    static async deleteTable(tableName) {
+        try {
+            await db.query(`DROP TABLE ??`, [tableName]);
+            console.log(`Tabla ${tableName} eliminada correctamente`);
+        } catch (error) {
+            console.error(`Error al eliminar la tabla ${tableName}:`, error);
+            throw error;
+        }
+    }
+
     static closeConnection() {
         db.end((err) => {
             if (err) {
@@ -126,3 +222,4 @@ class Connection {
 }
 
 export default Connection;
+
